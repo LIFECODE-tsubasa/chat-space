@@ -1,0 +1,188 @@
+@import "./variable";
+@import "./reset";
+@import "./clearfix";
+
+*{
+  box-sizing: border-box;
+}
+.topMessage{
+  background-color: $lightBlue;
+  color: $white;
+  display: flex;
+  justify-content: center;
+}
+.sideBer {
+  width: 300px;
+  height: 100vh;
+  font-weight: bold;
+  box-sizing: border-box;
+  float: left;
+  .sideHeader{
+    display: flex;
+    height: 100px;
+    align-items: center;  //縦方向中央揃え
+    padding: 0 20px;
+    background-color: #253141;
+    color: $white;
+    &__box{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      font-weight: bold;
+      .box__userName{
+        font-size: 16px;
+      }
+      .box__menu{
+        display: flex;
+        .menu__newGroup{
+          margin-left: 0.3rem;
+          a{
+            .fa{
+              @include faStyle();
+            }
+            .fa-edit:before{
+              font-family: "Font Awesome 5 Free";
+              content: "\f044";  /*アイコンの種類*/
+            }
+          }
+        }
+        .menu__edit{
+          margin-left: 0.3rem;
+          a{
+            .fa{
+              @include faStyle();
+            }
+            .fa-edit:before{
+              font-family: "Font Awesome 5 Free";
+              content: "\f013";  /*アイコンの種類*/
+            }
+          }
+        }
+      }
+    }
+  }
+  .sideGroups{
+    padding: 20px 20px 0;
+    background-color: #2f3e51;
+    color: $white;
+    height: calc(100vh - 124px);
+
+    .sideGroup{
+      margin-bottom: 40px;
+      &__name{
+        margin-bottom: 5px;
+        font-size: 15px;
+      }
+      &__message{
+        font-size: 11px;
+      }
+    }
+  }
+}
+.main {
+  height: calc(100% - 24px);
+  float: left;
+  width: $mainWidth;
+  .mainHeader{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  color: $black;
+  height: 100px;
+  background-color: $white;
+  border-bottom: solid 1px #eee;
+    .mainGroup__name{
+      margin-top: 35px;
+      h2{
+        font-size: 20px;
+        color: $black;
+        margin-bottom: 15px;
+      }
+    }
+    .mainGroup__lists{
+      display: flex;
+      font-size: 12px;
+    }
+    .mainHeader__editBtn{
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 30px;
+      position: absolute;
+      right: 40px;
+      color: $lightBlue;
+      border: solid 1px $lightBlue;
+    }
+  }
+  .mainMessages{
+    height: calc(100vh - 214px);
+  background-color: #fafafa;
+  padding: 46px 40px;
+    .mainMessage{
+      padding-bottom: 40px;
+      .mainMessage__info{
+        display: flex;
+        margin-bottom: 10px;
+        p.message__talker{
+          color: $gray;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        p.message__date{
+          color: #999999;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+      .mainMessage__text{
+        color: $gray;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .form{
+    background-color: #dddddd;
+    padding: 20px 40px;
+    .newMessage{
+      display: flex;
+      flex-direction: row;
+      .input-box{
+        position: relative;
+        width: 100%;
+        .form__inputBox{
+          height: 50px;
+          width: 100%;
+          padding: 0 40px 0 10px;
+          color: $gray;
+          border-style: none;
+        }
+        .form__image{
+          font-size: 1.3rem;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          &__file{
+            display: none;
+          }
+          .fa{
+            @include faStyle();
+          }
+          .fa-image:before{
+            content: "\f03e";  /*アイコンの種類*/
+            font-family: "Font Awesome 5 Free";
+            font-weight: 400;
+          }
+        }
+      }
+      .form__submitBtn{
+        width: 100px;
+        height: 50px;
+        padding: 0 30px;
+        margin-left: 15px;
+        background-color: $lightBlue;
+        color: $white;
+      }
+    }
+  }
+}
