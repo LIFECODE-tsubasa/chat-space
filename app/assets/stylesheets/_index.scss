@@ -1,7 +1,3 @@
-@import "./variable";
-@import "./reset";
-@import "./clearfix";
-
 *{
   box-sizing: border-box;
 }
@@ -29,12 +25,12 @@
       width: 100%;
       justify-content: space-between;
       font-weight: bold;
-      .box__userName{
+      &__userName{
         font-size: 16px;
       }
       .box__menu{
         display: flex;
-        .menu__newGroup{
+        &__newGroup{
           margin-left: 0.3rem;
           a{
             .fa{
@@ -46,7 +42,7 @@
             }
           }
         }
-        .menu__edit{
+        &__edit{
           margin-left: 0.3rem;
           a{
             .fa{
@@ -120,7 +116,7 @@
   padding: 46px 40px;
     .mainMessage{
       padding-bottom: 40px;
-      .mainMessage__info{
+      &__info{
         display: flex;
         margin-bottom: 10px;
         p.message__talker{
@@ -134,7 +130,7 @@
           margin-left: 10px;
         }
       }
-      .mainMessage__text{
+      &__text{
         color: $gray;
         font-size: 14px;
         margin-bottom: 10px;
