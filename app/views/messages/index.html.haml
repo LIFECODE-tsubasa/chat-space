@@ -1,0 +1,60 @@
+
+%head
+  
+%body
+  .topMessage
+    グループを作成しました
+  -group__name = 'test'
+  -group__member = '翼'
+  .sideBer
+    .sideHeader
+      .sideHeader__box
+        .box__userName
+          SEO
+        %ul.box__menu
+          %a
+            %li.menu__newGroup
+              %i.fa.fa-edit
+          %a
+            %li.menu__edit
+              %i.fa.fa-cog
+
+    .sideGroups
+      .sideGroup
+        .sideGroup__name
+          #{group__name}
+        .sideGroup__message
+          hogehoge
+  .main
+    .mainHeader
+      .mainGroup__name
+        %h2
+          #{group__name}
+        %ul.mainGroup__lists
+          %li.mainGroup__list
+            Member:　#{group__member}
+      %a
+        .mainHeader__editBtn
+          Edit
+    .mainMessages
+      .mainMessage
+        .mainMessage__info
+          %p.message__talker
+            翼
+          %p.message__date
+            2019/08/11(Sun) 14:55:25
+        %p.mainMessage__text
+          message
+    .form
+      %form.newMessage(enctype="multipart/form-data" action="/groups/3135/messages" accept-charset="UTF-8" method="post")
+        -# %input(name="utf8" type="hidden" value="✓")
+        -# %input(type="hidden" name="authenticity_token" value="zEmI/tVWbGiKXD9TdEiZ7/QkfB7Vko/U2rS21UPCuYvcwKBCN82xMyom8dg76kFnFhNI6ktjpkv+DKpAjxnTxQ==")<>
+        .input-box<>
+          %input(placeholder="type a message" class="form__inputBox" type="text" name="message[content]")
+          -# %label.upload-label{for: "upload-icon"}
+          -#   %i.fa.fa-picture-o
+          -#   = f.file_field :image, id: "upload-icon"
+          %label(class="form__image" for="message_image")
+            %i(class="fa fa-image")
+            %input(class="form__image__file" type="file" name="message[image]" id="message_image")
+        %input(type="submit" name="commit" value="Send" class="form__submitBtn" data-disable-with="Send")
